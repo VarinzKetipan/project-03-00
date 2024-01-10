@@ -39,6 +39,9 @@ Route::get('admin/user/index',[UserController::class, 'index'])->name('u.index')
 //เมนู category
 Route::get('admin/category/category',[CategoryController::class, 'index'])->name('c.category');
 Route::get('admin/category/create',[CategoryController::class,'create'])->name('c.create');
+Route::post('admin/category/insert',[CategoryController::class,'insert']);
+Route::get('admin/category/edit/{id}',[CategoryController::class,'edit']);
+Route::post('admin/category/update/{id}',[CategoryController::class,'update']);
 
 //เมนู Products
 Route::get('admin/product/product',[ProductController::class, 'index'])->name('p.product');

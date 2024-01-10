@@ -4,15 +4,16 @@
                         <div class="row">
                             <div class="col-md-12">
                               <div class="card mb-9">
-                                <h5 class="card-header">Category</h5>
+                                <h5 class="card-header">Edit Category</h5>
                                 <div class="card-body">
-                                  <form method="POST" action="{{ url('admin/category/insert') }}">
+                                  <form method="POST" action="{{ url('admin/category/update/'.$cat->category_id) }}">
                                     @csrf
                                   <div>
                                     <label for="defaultFormControlInput" class="form-label">Name</label>
                                     <input
                                       type="text"
                                       name="name"
+                                      value="{{ $cat->name }}"
                                       class="form-control"
                                       id="defaultFormControlInput"
                                       placeholder="กรุณากรอกประเภทสินค้า"
@@ -23,7 +24,7 @@
                                     <div class="alert alert-danger">{{ $message }}</div>
                                     @enderror
                                     </div>
-                                    <input type="submit" value="บันทึก" class="btn btn-primary mt-3" บันทึก>
+                                    <input type="submit" value="อัพเดท" class="btn btn-primary mt-3" บันทึก>
                                     <a href="{{ route('c.category') }}" class="btn btn-danger mt-3 mx-2">ย้อนกลับ</a>
                                   </div>
                                   </form>
