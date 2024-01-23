@@ -9,7 +9,7 @@ use App\Models\Category;
 class CategoryController extends Controller
     {
         public function index(){
-            $category = Category::all();
+            $category = Category::orderBy('category_id','desc')->paginate(5);
             return view('backend.category.index',compact('category'));
         }
     
@@ -51,6 +51,14 @@ class CategoryController extends Controller
                 $category->update();
                 alert()->success('อัพเดทช้อมูลสำเสร็จ','ชื่อประเภทสินค้าชื่อนี้ถูกบันทึกลงในระบบฐานข้อมูลเรียบร้อยแล้ว');
                 return redirect()->route('c.create');
+            }
+
+            public function delete($category_id){
+                $category = Category::find($category_id);
+                $category->delete();
+                alert()->success('ลบช้อมูลสำเสร็จ','ชื่อประเภทสินค้าชื่อนี้ถูกลบในระบบฐานข้อมูลเรียบร้อยแล้ว');
+                return redirect()->route('c.category');
+                
             }
 
     }

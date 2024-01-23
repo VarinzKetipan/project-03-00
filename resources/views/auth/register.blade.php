@@ -71,10 +71,10 @@
 
                 <input type="submit" value="sign up" class="btn btn-block btn-primary">
                 <div class="login100-form-social flex-c-m">
-					<a href="{{route('login')}}" class="txt2 bo1">
-						back to login
-					</a>
-				</div>
+					      <a href="{{route('login')}}" class="txt2 bo1">
+						    back to login
+					      </a>
+				        </div>
 
               </form>
             </div>

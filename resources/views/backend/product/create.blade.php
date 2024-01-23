@@ -7,10 +7,14 @@
                               <div class="card mb-9">
                                 <h5 class="card-header">Product</h5>
                                 <div class="card-body">
+                                  
+                                <form action="{{ url('admin/product/insert') }}" method="post">
+                                  @csrf
                                   <div>
                                     <label for="defaultFormControlInput" class="form-label">Name</label>
                                     <input
                                       type="text"
+                                      name="name"
                                       class="form-control"
                                       id="defaultFormControlInput"
                                       placeholder="กรุณากรอกชื่อสินค้า"
@@ -21,6 +25,7 @@
                                     <label for="defaultFormControlInput" class="form-label">Price</label>
                                     <input
                                       type="text"
+                                      name="price"
                                       class="form-control"
                                       id="defaultFormControlInput"
                                       placeholder="กรุณากรอกราคาสินค้า"
@@ -30,6 +35,7 @@
                                     <label for="defaultFormControlInput" class="form-label">Description</label>
                                     <input
                                       type="text"
+                                      name="description"
                                       class="form-control"
                                       id="defaultFormControlInput"
                                       placeholder="กรุณากรอกรายละเอียดสินค้า"
@@ -37,7 +43,7 @@
                                     />
 
                                     <label for="exampleFormControlSelect1" class="form-label">Category</label>
-                                    <select class="form-select" id="exampleFormControlSelect1" aria-label="Default select example">
+                                    <select name="category_id" class="form-select" id="exampleFormControlSelect1" aria-label="Default select example">
                                       <option selected>กรุณาเลือกประเภทสินค้า</option>
                                       <option value="1">โทรศัพท์มือถือ</option>
                                       <option value="2">โน๊ตบุ๊ค</option>
@@ -47,13 +53,14 @@
 
                                     <label for="defaultFormControlInput" class="form-label">Images</label>
                                       <div class="input-group">
-                                        <input type="file" class="form-control" id="inputGroupFile02" />
+                                        <input type="file" name="image" class="form-control" id="inputGroupFile02" />
                                         <label class="input-group-text" for="inputGroupFile02">Upload</label>
                                       </div>
-
-                                    <a href="" class="btn btn-primary mt-3">บันทึก</a>
-                                    <a href="{{ route('p.index') }}" class="btn btn-danger mt-3 mx-2">ย้อนกลับ</a>
+                        
+                                    <input type="submit" value="บันทึก" class="btn btn-primary mt-3">
+                                    <a href="{{ route('p.product') }}" class="btn btn-danger mt-3 mx-2">ย้อนกลับ</a>
                                   </div>
+                                </form>
                                 </div>
                               </div>
                             </div>

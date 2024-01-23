@@ -51,6 +51,8 @@
                   </label>
 
                   <span class="ml-auto"><a href="{{route('password.request')}}" class="forgot-pass">Forgot Password</a></span> 
+                  <span class="ml-auto"><a href="{{route('register')}}" class="register">register</a></span> 
+                  
                 </div>
 
                 <input type="submit" value="Log In" class="btn btn-block btn-primary">

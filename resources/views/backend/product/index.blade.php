@@ -5,7 +5,7 @@
                         <div class="card">
                             <h5 class="card-header">Products</h5>
                             <div class="table-responsive text-nowrap">
-                                <a href="{{ route('c.create') }}" class="btn btn-success mx-3"><i class='bx bxs-plus-circle'></i> เพิ่มข้อมูล</a>
+                                <a href="{{ route('p.create') }}" class="btn btn-success mx-3"><i class='bx bxs-plus-circle'></i> เพิ่มข้อมูล</a>
                               <table class="table mt-4">
                                 <thead class="table-dark">
                                   <tr>

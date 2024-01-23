@@ -161,6 +161,8 @@ return [
          */
         //SweetAlert แจ้งเตือน
         RealRashid\SweetAlert\SweetAlertServiceProvider::class,
+        //Intervantion laravel(รูปภาพ)
+        Intervention\Image\ImageServiceProvider::class,
         /*
          * Application Service Providers...
          */
@@ -186,7 +188,9 @@ return [
         // 'Example' => App\Facades\Example::class,
         //SweetAlert แจ้งเตือน
         'Alert' => RealRashid\SweetAlert\Facades\Alert::class,
+        //Intervantion laravel(รูปภาพ)
+        'Image' => Intervention\Image\Facades\Image::class,
 
     ])->toArray(),
-
+    Intervention\Image\ImageServiceProvider::class,
 ];

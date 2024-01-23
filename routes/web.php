@@ -19,6 +19,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('auth.login');
+    return view('auth.register');
+    
 });
 
 Route::get('/dashboard', function () {
@@ -42,7 +44,10 @@ Route::get('admin/category/create',[CategoryController::class,'create'])->name('
 Route::post('admin/category/insert',[CategoryController::class,'insert']);
 Route::get('admin/category/edit/{id}',[CategoryController::class,'edit']);
 Route::post('admin/category/update/{id}',[CategoryController::class,'update']);
+Route::get('admin/category/delete/{id}',[CategoryController::class,'delete']);
+
 
 //เมนู Products
 Route::get('admin/product/product',[ProductController::class, 'index'])->name('p.product');
 Route::get('admin/product/create',[ProductController::class,'create'])->name('p.create');
+Route::post('admin/product/insert',[ProductController::class,'insert']);
