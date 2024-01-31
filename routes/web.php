@@ -5,6 +5,9 @@ use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Models\Category;
+use App\Models\Product;
+use App\Models\User;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,13 +21,15 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('auth.login');
-    return view('auth.register');
-    
+    return view('welcome');
+
 });
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    $c = Category::all();
+    $p = Product::all();
+    $u = User::all();
+    return view('dashboard',compact('c','p','u'));
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
@@ -51,3 +56,7 @@ Route::get('admin/category/delete/{id}',[CategoryController::class,'delete']);
 Route::get('admin/product/product',[ProductController::class, 'index'])->name('p.product');
 Route::get('admin/product/create',[ProductController::class,'create'])->name('p.create');
 Route::post('admin/product/insert',[ProductController::class,'insert']);
+Route::get('admin/product/edit/{id}',[ProductController::class,'edit'])->name('p.edit');
+Route::post('admin/product/update/{id}',[ProductController::class,'update']);
+Route::get('admin/product/delete/{id}',[ProductController::class,'delete']);
+

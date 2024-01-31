@@ -36,7 +36,7 @@
             <h1>{{date("d:m:Y H:m:s:")}}</h1>
            </div>
 
-             
+
         </div>
     </body>
 </html>
